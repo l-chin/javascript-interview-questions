@@ -815,6 +815,14 @@
    5. An Object has a prototype, so there are default keys in an object that could collide with your keys if you're not careful. As of ES5 this can be bypassed by creating an object(which can be called a map) using `Object.create(null)`, but this practice is seldom done.
    6. A Map may perform better in scenarios involving frequent addition and removal of key pairs.
 
+   summary: 
+    1. keys: map allow any type of keys
+    2. order: map are ordered by insertion
+    3. size: obj: Object.entries(obj).length, map: map.size
+    4. iteration: map are iterable, obj: for...in or Object.keys()
+    5. prototype: obj: has prototype, map: doesn't have prototype
+    6. performance: map: better for frequent addition/removal
+
    **[⬆ Back to Top](#table-of-contents)**
 
 9. ### What is the difference between == and === operators
@@ -888,6 +896,7 @@
 13. ### What is a higher order function
 
     A higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+    **higher-order function is a function that can manipulate other functions by accepting them as arguments or returning them.**
     The syntactic structure of higher order function will be as follows,
 
     ```javascript
@@ -899,6 +908,8 @@
     You can also call the function which you are passing to higher order function as callback function.
 
     The higher order function is helpful to write the modular and reusable code. 
+
+    **eg. .map(), .filter(), .reduce()**
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -917,6 +928,8 @@
 15. ### What is the currying function
 
     Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument. Currying is named after a mathematician **Haskell Curry**. By applying currying, an n-ary function turns into a unary function.
+
+    **Summary：Currying is a transformation technique that converts a function with multiple arguments into a sequence of functions each with only a single argument(unary function).**
 
     Let's take an example of n-ary function and how it turns into a currying function,
 
@@ -959,6 +972,8 @@
 
     Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and make it harder to break your application by not having any side effects. These principles are coming together with the **Immutability** concept of ES6: giving preference to **const** over **let** usage.
 
+    **eg. React functional components, reducer functions**
+
     **[⬆ Back to Top](#table-of-contents)**
 
 17. ### What is the purpose of the let keyword
@@ -975,6 +990,8 @@
     }
     console.log(counter); // 30 (because the variable in if block won't exist here)
     ```
+
+    whereas var is function scoped, and it can be redeclared in the same scope. basically the value has been changed because of the hoisting
 
     **[⬆ Back to Top](#table-of-contents)**
 
