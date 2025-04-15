@@ -1232,6 +1232,27 @@
     var myFunction = Welcome("John");
     myFunction("Welcome "); //Output: Welcome John
     myFunction("Hello Mr."); //output: Hello Mr. John
+    myFunction = null; // remove the reference, garbage collector will remove the object
+    ```
+
+    ```javascript
+    function createCounter() {
+      let count = 0;
+      return {
+        increment: function() {
+          count++;
+          return count;
+        },
+        getCount: function() {
+          return count;
+        }
+      }
+    }
+    const counter = createCounter();
+    console.log('counter.getCount()', counter.getCount())
+    counter.increment()
+    console.log('counter.getCount()', counter.getCount())
+    counter = null; // remove the reference, garbage collector will remove the object
     ```
 
     As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
