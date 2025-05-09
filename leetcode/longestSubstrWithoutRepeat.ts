@@ -43,3 +43,19 @@ function lswr(s: string) {
 
   return maxLength;
 }
+
+const lengthOfLongestSubstring = (s: string) => {
+// 记录每个字符最后出现的位置
+const charMap = new Map()
+let maxLength = 0
+let left = 0
+for (let right = 0; right < s.length; right++) {
+  const currentChar = s[right]
+  // 如果当前字符已经出现过，且在当前窗口内
+  if(charMap.has(currentChar) && charMap.get(currentChar) >= left) {
+    left = charMap.get(currentChar) + 1
+  }
+  charMap.set(currentChar, right)
+  maxLength = Math.max(maxLength, right - left + 1)
+}
+}
