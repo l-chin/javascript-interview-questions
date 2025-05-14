@@ -10,7 +10,6 @@
     "github-slugger": "^2.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.8.3"
   }
-
 }
